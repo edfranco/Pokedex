@@ -33,6 +33,16 @@ app.get('/api/pokemon/:name', (req, res) => {
 	});
 });
 
+// returns all trainers
+app.get('/api/trainers', (req, res) => {
+	db.Trainer.find({})
+		.populate('pokemon')
+		.exec((error, foundTrainers) => {
+			if (error) return res.status(400).json({ error });
+			res.status(200).json(foundTrainers);
+		});
+});
+
 // Server Listener
 app.listen(PORT, () => {
 	console.log('Welcome Professor Oak.');
