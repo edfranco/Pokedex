@@ -123,15 +123,16 @@ const badge = {
 	color: 'All',
 	gym: 'Celadon City Gym'
 };
-db.Badge.create(badge, (error, createdBadge) => {
-	if (error) return console.log(error);
-	db.Trainer.findOneAndUpdate(
-		{ name: 'Ash Ketchum' },
-		{ badges: [createdBadge] },
-		{ new: true },
-		(error, updatedTrainer) => {
-			if (error) return console.log(error);
-			console.log(updatedTrainer);
-		}
-	);
-});
+
+// db.Badge.create(badge, (error, createdBadge) => {
+// 	if (error) return console.log(error);
+// 	db.Trainer.findOneAndUpdate(
+// 		{ name: 'Ash Ketchum' },
+// 		{ badges: [createdBadge] },
+// 		{ new: true },
+// 		(error, updatedTrainer) => {
+// 			if (error) return console.log(error);
+// 			console.log(updatedTrainer);
+// 		}
+// 	);
+// });

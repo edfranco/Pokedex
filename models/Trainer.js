@@ -6,12 +6,14 @@ const TrainerSchema = new Schema({
 	name: String,
 	age: Number,
 	hometown: String,
+	// reference
 	pokemon: [
 		{
 			type: Schema.Types.ObjectId,
 			ref: 'Pokemon'
 		}
 	],
+	// Embeded
 	badges: [Badge.schema]
 });
 
