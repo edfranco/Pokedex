@@ -18,12 +18,22 @@ const $pokedex = $('#pokedex');
 
 // -------------------------------- FUNCTIONS ------------------------------- //
 
+const typeComponent = types => {
+	return types
+		.map(type => {
+			return `<p class="type ${type.toLowerCase()}">${type}</p>`;
+		})
+		.join('');
+};
+
 const pokemonComponent = pokemon => {
+	const types = typeComponent(pokemon.type);
 	return `<div class="card" style="width: 18rem;">
             <img src="${pokemon.image}" class="card-img-top" alt="${
 		pokemon.name
 	}">
-            <div class="card-body">
+						<div class="card-body">
+						${types}
               <p class="card-text">${pokemon.description}</p>
             </div>
           </div>`;

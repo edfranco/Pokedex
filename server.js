@@ -9,9 +9,6 @@ const routes = require('./routes');
 // Glabal Variables
 const PORT = 3000;
 
-// Middleware
-app.use(express.static(`${__dirname}/public`));
-
 //Routes
 
 //NOTE    Views Endpoints
