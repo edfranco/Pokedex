@@ -1,0 +1,74 @@
+[
+	{
+		"name": "Bulbasaur",
+		"type": ["Grass", "Poison"],
+		"power": 20,
+		"health": 24,
+		"image": "https://cdn.bulbagarden.net/upload/thumb/2/21/001Bulbasaur.png/500px-001Bulbasaur.png",
+		"pokedex": 1
+	},
+	{
+		"name": "Ivysaur",
+		"type": ["Grass", "Poison"],
+		"power": 30,
+		"health": 44,
+		"image": "https://cdn.bulbagarden.net/upload/thumb/7/73/002Ivysaur.png/500px-002Ivysaur.png",
+		"pokedex": 2
+	},
+	{
+		"name": "Venusaur",
+		"type": ["Grass", "Poison"],
+		"power": 60,
+		"health": 74,
+		"image": "https://cdn.bulbagarden.net/upload/thumb/a/ae/003Venusaur.png/1200px-003Venusaur.png",
+		"pokedex": 3
+	},
+	{
+		"name": "Charmander",
+		"type": ["Fire"],
+		"power": 26,
+		"health": 20,
+		"image": "https://cdn.bulbagarden.net/upload/thumb/7/73/004Charmander.png/500px-004Charmander.png",
+		"pokedex": 4
+	},
+	{
+		"name": "Charmeleon",
+		"type": ["Fire"],
+		"power": 40,
+		"health": 33,
+		"image": "https://cdn.bulbagarden.net/upload/thumb/4/4a/005Charmeleon.png/500px-005Charmeleon.png",
+		"pokedex": 5
+	},
+	{
+		"name": "Charizard",
+		"type": ["Fire"],
+		"power": 70,
+		"health": 55,
+		"image": "https://cdn.bulbagarden.net/upload/thumb/4/4a/005Charmeleon.png/500px-005Charmeleon.png",
+		"pokedex": 6
+	},
+	{
+		"name": "Squirtle",
+		"type": ["Water"],
+		"power": 15,
+		"health": 30,
+		"image": "https://cdn.bulbagarden.net/upload/thumb/3/39/007Squirtle.png/500px-007Squirtle.png",
+		"pokedex": 7
+	},
+	{
+		"name": "Wartortle",
+		"type": ["Water"],
+		"power": 27,
+		"health": 45,
+		"image": "https://cdn.bulbagarden.net/upload/thumb/0/0c/008Wartortle.png/500px-008Wartortle.png",
+		"pokedex": 8
+	},
+	{
+		"name": "Blastoise",
+		"type": ["Water"],
+		"power": 50,
+		"health": 80,
+		"image": "https://cdn.bulbagarden.net/upload/thumb/0/02/009Blastoise.png/500px-009Blastoise.png",
+		"pokedex": 9
+	}
+]

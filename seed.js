@@ -1,23 +1,6 @@
 const db = require('./models');
 
-const pokemonList = [
-	{
-		name: 'Bulbasaur',
-		type: 'Grass',
-		power: 20,
-		health: 24,
-		image:
-			'https://static.pokemonpets.com/images/monsters-images-300-300/1-Bulbasaur.png'
-	},
-	{
-		name: 'Squirtle',
-		type: 'Water',
-		power: 27,
-		health: 15,
-		image:
-			'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjcvKy-iKvjAhXiCTQIHQUdCKwQjRx6BAgBEAU&url=https%3A%2F%2Fpokemontowerdefensethree.fandom.com%2Fwiki%2FSquirtle&psig=AOvVaw06LWOkKok5MdKl8wlWbeS2&ust=1562872653097664'
-	}
-];
+const pokemonList = require('./pokemon.json');
 
 //-- CREATE --//
 // .create('object template', function('error','object returned from db'))
@@ -91,28 +74,28 @@ const Ash = {
 
 // Update
 
-const newAsh = {
-	pokemon: ['Bulbasaur', 'Squirtle']
-};
+// const newAsh = {
+// 	pokemon: ['Bulbasaur', 'Squirtle']
+// };
 
-const updateTrainer = () => {
-	const ids = [];
-	newAsh.pokemon.forEach(name => {
-		db.Pokemon.findOne({ name }, (error, foundPokemon) => {
-			if (error) return console.log(error);
-			ids.push(foundPokemon._id);
-			db.Trainer.findOneAndUpdate(
-				{ name: 'Ash Ketchum' },
-				{ pokemon: ids },
-				{ new: true },
-				(error, updatedTrainer) => {
-					if (error) return console.log(error);
-					console.log(updatedTrainer);
-				}
-			);
-		});
-	});
-};
+// const updateTrainer = () => {
+// 	const ids = [];
+// 	newAsh.pokemon.forEach(name => {
+// 		db.Pokemon.findOne({ name }, (error, foundPokemon) => {
+// 			if (error) return console.log(error);
+// 			ids.push(foundPokemon._id);
+// 			db.Trainer.findOneAndUpdate(
+// 				{ name: 'Ash Ketchum' },
+// 				{ pokemon: ids },
+// 				{ new: true },
+// 				(error, updatedTrainer) => {
+// 					if (error) return console.log(error);
+// 					console.log(updatedTrainer);
+// 				}
+// 			);
+// 		});
+// 	});
+// };
 
 // updateTrainer();
 
