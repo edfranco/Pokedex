@@ -28,22 +28,35 @@ const typeComponent = types => {
 
 const pokemonComponent = pokemon => {
 	const types = typeComponent(pokemon.type);
-	return `<div class="card" style="width: 18rem;">
-            <img src="${pokemon.image}" class="card-img-top" alt="${
-		pokemon.name
-	}">
+	return `
+					<div class="card">
+					<a href="/pokemon?name=${pokemon.name}">
+						<div class="img-container">
+						<img src="${pokemon.image}" class="card-img" alt="${pokemon.name}">
+						</div>
 						<div class="card-body">
-						${types}
-              <p class="card-text">${pokemon.description}</p>
-            </div>
-          </div>`;
+						<div class="card-header">
+							${pokemon.name}
+						</div>
+							<div class="types">
+							${types}
+							</div>
+              <p class="card-text"> #${pokemon.pokedex}</p>
+						</div>
+						</a>
+					</div>`;
 };
 
-const render = response => {
-	const { data } = response;
+const updateState = response => {
+	state.pokemon = response.data;
+	render();
+};
+
+const render = () => {
+	const { pokemon } = state;
 	$pokedex.empty();
-	data.forEach(pokemon => {
-		const card = pokemonComponent(pokemon);
+	pokemon.forEach(entry => {
+		const card = pokemonComponent(entry);
 		$pokedex.append(card);
 	});
 };
@@ -52,7 +65,7 @@ const getAllPokemon = () => {
 	$.ajax({
 		url: BASE_URL,
 		method: 'GET',
-		success: render,
+		success: updateState,
 		error: (e1, e2, e3) => console.log(e2)
 	});
 };

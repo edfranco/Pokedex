@@ -9,9 +9,8 @@ router.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '../views/index.html'));
 });
 
-router.get('/pokemon/:name', (req, res) => {
+router.get('/pokemon', (req, res) => {
 	res.sendFile(path.join(__dirname, '../views/show.html'));
-	// res.sendFile(`${__dirname}/../views/show.html`);
 });
 
 module.exports = router;
