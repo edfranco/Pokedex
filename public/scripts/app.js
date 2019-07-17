@@ -11,16 +11,22 @@ const BASE_URL = '/api/pokemon';
 
 const state = {
     pokemon: [],
+    filtered: []
 
 };
 //NOTE DOM Elements
-
 const $pokedex = $('#pokedex');
-console.log({ $pokedex, state });
+const $searchbar = $(`#search-pokemon`);
+
 
 
 //NOTE Functions
+const typeComponent = types => {
+    return types.map(type => `<p class="type ${type.toLowerCase()}">${type}</p>`).join(' ');
+}
+
 const pokemonComponent = pokemon => {
+    const types = typeComponent(pokemon.type)
     return `
     <div class="card">
         <div class="img-container">
@@ -33,7 +39,8 @@ const pokemonComponent = pokemon => {
             </div>
 
             <div class="types"</div>
-
+                ${types}
+            </div>
             <div class="card-text">
                 <p>${pokemon.pokedex}</p>
             </div>
@@ -43,11 +50,20 @@ const pokemonComponent = pokemon => {
 }
 
 const render = () => {
-    const { pokemon } = state;
-    pokemon.forEach(pokemon => {
-        const card = pokemonComponent(pokemon);
-        $pokedex.append(card)
-    })
+    const { pokemon, filtered } = state;
+    $pokedex.empty();
+    if (filtered.length > 0) {
+        filtered.forEach(pokemon => {
+            const card = pokemonComponent(pokemon);
+            $pokedex.append(card)
+        })
+    } else {
+        pokemon.forEach(pokemon => {
+            const card = pokemonComponent(pokemon);
+            $pokedex.append(card)
+        })
+    }
+
 }
 
 const updateState = response => {
@@ -67,4 +83,13 @@ const getAllPokemon = () => {
 
 getAllPokemon();
 
+const filterPokemon = event => {
+    const filteredPokemon = state.pokemon.filter(pokemon => {
+        return pokemon.pokedex.toString() === event.target.value || pokemon.name.toLowerCase().includes(event.target.value.toLowerCase());
+    })
+    state.filtered = filteredPokemon;
+    render();
+}
+
 //NOTE Event Listeners
+$searchbar.keyup(filterPokemon);

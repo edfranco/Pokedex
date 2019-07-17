@@ -1,3 +1,47 @@
 body {
 	background-color: goldenrod;
 }
+
+#pokedex{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.card{
+	text-align: center;
+	background-color: white;
+	height: 40vh;
+	width: 15vw;
+	border: 1px solid black;
+}
+
+.card:hover{
+	background-color: rgb(116, 114, 114);
+	cursor: pointer;
+}
+
+.img-container{
+	border: 1px solid black;
+}
+
+.types{
+	display: flex;
+	justify-content: center;
+}
+
+.grass{
+	background-color: green;
+}
+
+.poison{
+	background-color: purple; 
+}
+
+.fire{
+	background-color: red; 
+}
+
+.water{
+	background-color: blue; 
+}
